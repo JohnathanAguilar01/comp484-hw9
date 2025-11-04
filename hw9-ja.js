@@ -1,0 +1,168 @@
+// #############################################
+// Set 1: Advanced Syntax, Types, and Quirks
+// #############################################
+
+// Exercise 1: Complex Arithmetic and Standard Rules
+var exerciseOneResults = 3 + 5 * (10 / 2) - (8 - 4);
+console.log(exerciseOneResults);
+
+// Exercise 2: Case Sensitivity Test
+var projectIdentifier = "COMP484";
+ProjectIdentifier = "JS_Advanced";
+
+/*
+The line above would not change projectIdentifier, because
+JavaScript is case sensitive. "projectIdentifier" and "ProjectIdentifier"
+are treated as different identifiers.
+*/
+
+// Correct reassignment using the exact same identifier.
+projectIdentifier = "JS_Advanced";
+console.log(projectIdentifier);
+
+// Exercise 3: String Quoting Challenge
+var courseDescription =
+  "The course is \"interactive\" and involves 'scripting' logic.";
+
+// Exercise 4: Escaping and Console Output
+var errorMessage = 'An internal server error occurred: "Access Denied"';
+console.log(errorMessage);
+
+// Exercise 5: Type Coercion with Non-Plus Operators
+var valueA = 10; // number
+var valueB = "4"; // string
+
+var resultSubtraction = valueA - valueB; // "4" coercied into number
+var resultMultiplication = valueA * valueB; // "4" coercied into number
+
+console.log("resultSubtraction:", resultSubtraction);
+console.log("resultMultiplication:", resultMultiplication);
+console.log("typeof resultSubtraction:", typeof resultSubtraction);
+console.log("typeof resultMultiplication:", typeof resultMultiplication);
+
+// #############################################
+// Set 2: Operators and Type Theory
+// #############################################
+
+// Exercise 6: Understanding null and undefined Types
+var unassignedVar; // declared but not assigned undefined
+var explicitNull = null; // explicitly set to null
+
+console.log("typeof unassignedVar:", typeof unassignedVar); // "undefined"
+console.log("typeof explicitNull:", typeof explicitNull); // "object"
+
+/*
+The null data type is the intentional
+absence of an object value.
+If we want a variable to be empty, but not
+undefined, you set its value to null.
+The undefined data type is what you get
+when you create a variable but don't set it
+to anything.
+*/
+
+// Exercise 7: Boolean Assignment and Type Identification
+var isBlocking = true;
+console.log(typeof isBlocking); // Boolean
+
+// Reassign the same variable to a string value.
+isBlocking = "true";
+console.log(typeof isBlocking); // string
+
+// Exercise 8: Invalid Variable Naming
+// The following declarations are commented out because they are invalid syntax:
+
+// var 1invalidName = 10;    // This is invalid because variable names cannot start with a number.
+// var invalid name = "Alice";  // This is invalid because spaces are not allowed in variable names.
+// var invalidName# = 5;          // This is invalid because symbols like # are not allowed in variables.
+
+// Exercise 9: Chained Shorthand Arithmetic
+var counterValue = 50;
+counterValue /= 5; // counterValue = counterValue / 5 → 10
+counterValue -= 3; // counterValue = counterValue - 3 → 7
+console.log(counterValue);
+
+// Exercise 10: Prefix vs. Postfix Unary Operators
+
+// Part 1: Postfix unary
+var x = 10;
+var y_post = x++;
+
+// With postfix unary x++, the value of x is returned first and then x is incremented to 11.
+console.log("y_post:", y_post); // 10
+console.log("x after y_post assignment:", x); // 11
+
+// Part 2: Prefix unary
+x = 10; // re-asign
+var z_pre = ++x;
+
+// With prefix unary ++x, x is incremented first and then the new value is returned.
+console.log("z_pre:", z_pre); // 11
+console.log("x after z_pre assignment:", x); // 11
+
+// #############################################
+// Set 3: Advanced Logic and Comparisons
+// #############################################
+
+// Exercise 11: Loose Equality and Coercion
+var testNumber = 0; // number
+var testBoolean = false; // boolean
+
+if (testNumber == testBoolean) {
+  console.log("0 and false are loosely equal with ==");
+}
+/*
+ Using == causes JavaScript to perform type coercion. This comparison has
+ false converted to 0, so 0 == 0 evaluates to true.
+*/
+
+// Exercise 12: Strict Inequality Test
+var versionA = 10.0; // number
+var versionB = "10.0"; // string
+
+if (versionA !== versionB) {
+  console.log("versionA and versionB are not strictly equal.");
+} else {
+  console.log("versionA and versionB are strictly equal.");
+}
+
+// Exercise 13: Logical OR and AND Combination
+var isLoggedIn = true;
+var isSubscriber = false;
+var isTrialExpired = true;
+
+if ((isLoggedIn && isSubscriber) || (isLoggedIn && !isTrialExpired)) {
+  console.log("Access granted.");
+} else {
+  console.log("Access denied.");
+}
+
+// Exercise 14: Simulating XOR using Nested Conditionals
+var conditionA = true;
+var conditionB = false;
+
+// if either conditionA or conditionB have to be true but they also both can't be true
+if ((conditionA || conditionB) && !(conditionA && conditionB)) {
+  console.log("XOR Success");
+} else {
+  console.log("XOR Fail");
+}
+
+// Exercise 15: Converting IF/ELSE to Ternary Operator
+var scriptLoadType = "deferred";
+var loadStatus;
+
+// Standard if/else
+if (scriptLoadType === "deferred") {
+  loadStatus = "Non-blocking";
+} else {
+  loadStatus = "Potentially Blocking";
+}
+
+// Ternary operator version
+var loadStatusTernary =
+  scriptLoadType === "deferred" ? "Non-blocking" : "Potentially Blocking";
+
+// #############################################
+// Set 4: Integration and Application
+// #############################################
