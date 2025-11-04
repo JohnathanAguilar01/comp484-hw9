@@ -225,3 +225,22 @@ if (typeof dataInput === "number") {
   dataInput = true;
   console.log(typeof dataInput);
 }
+
+// Exercise 20: Simulating DOM Manipulation Timing Failure (Conceptual)
+
+// Standard JavaScript code sequence necessary to inject an <h1> element containing the text "Interactive Layer Loaded" into the document body.
+var headingElement = document.createElement("h1");
+headingElement.innerHTML = "Interactive Layer Loaded";
+document.body.appendChild(headingElement);
+
+/*
+ If the following DOM manipulation code is placed in the <head> of an HTML
+ document without the "defer" or "async" attributes on the script tag,
+ it will run as soon as the script is parsed.
+ this mean that the script will run before the browser
+ has gotten to parsing the <body> element.
+
+ In that situation, if we tried to use document.body.appendChild(...) on an
+ <body> element that has yet to be rendered, it would cause an error because the
+ element does not exist in the DOM yet.
+ */
