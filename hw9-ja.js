@@ -166,3 +166,62 @@ var loadStatusTernary =
 // #############################################
 // Set 4: Integration and Application
 // #############################################
+
+// Exercise 16: Commenting and Code Structure
+
+/*
+calculateRenderTime:
+This function is for calculating the time
+taken to parse HTML and execute JavaScript.
+*/
+function calculateRenderTime() {
+  // Placeholder: implementation would go here.
+}
+
+// Exercise 17: Date Object Formatting Challenge (MM/DD/YYYY)
+var todayDate = new Date();
+
+var month = todayDate.getMonth() + 1; // Months are zero-indexed, so add 1.
+var day = todayDate.getDate();
+var year = todayDate.getFullYear();
+
+// This will add the leading zero to make sure MM and DD are always two digits.
+if (month < 10) {
+  month = "0" + month;
+}
+if (day < 10) {
+  day = "0" + day;
+}
+
+var formattedDate = "Today is " + month + "/" + day + "/" + year;
+console.log(formattedDate);
+
+// Exercise 18: Mixed Type Arithmetic Explanation
+var val1 = 20; // number
+var val2 = "5"; // string
+
+var sumResult = val1 + val2; // "+" with a string causes concatenation.
+var diffResult = val1 - val2; // "-" coerces string to number.
+
+console.log("sumResult:", sumResult);
+console.log("diffResult:", diffResult);
+
+/*
+For sumResult when using the "+" operator with one operand as a string,
+JavaScript performs string concatenation. The number 20 is converted to
+the string "20", and then concatenated with "5", producing "205".
+For diffResult when using the "-" operator, JavaScript doesn't do string
+concatenation. Instead, it attempts to convert both operands to numbers.
+"5" becomes 5, so 20 - 5 results in 15.
+*/
+
+// Exercise 19: Conditional based on Type Check
+var dataInput = 484; // numeric value
+
+if (typeof dataInput === "number") {
+  console.log("Input is numeric.");
+} else {
+  // If the type were not "number", reassign and log.
+  dataInput = true;
+  console.log(typeof dataInput);
+}
