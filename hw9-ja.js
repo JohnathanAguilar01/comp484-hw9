@@ -173,6 +173,10 @@ var loadStatusTernary =
 calculateRenderTime:
 This function is for calculating the time
 taken to parse HTML and execute JavaScript.
+it is definened by the function key word followed by 
+the function name in camel case.
+the function the has "()" where you input argumnets then
+"{}" where the body of the function goes.
 */
 function calculateRenderTime() {
   // Placeholder: implementation would go here.
